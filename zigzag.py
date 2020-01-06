@@ -39,5 +39,15 @@ class zigzag():
         else:
             return f'Done zag, {zigzag.matrix}'
 
+    def zoog(self, string, numlevels):
+        totalchars = ''
+        self.zig(string, numlevels)
+        for char in zigzag.matrix:
+            if char != '-':
+                totalchars += char
+            else:
+                continue
+        return totalchars
 
-zigzag().zig(string, numlevels)
+
+zigzag().zoog(string, numlevels)
