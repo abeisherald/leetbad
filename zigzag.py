@@ -43,12 +43,14 @@ class zigzag():
     def zoog(self, string, numlevels):
         totalchars = ''
         self.zig(string, numlevels)
-        for char in zigzag.matrix:
-            if char != '-' and isinstance(char, str):
-                totalchars += char
-            else:
-                continue
+        listoflines = list(zigzag.matrix.values())
+        for line in listoflines:
+            for char in line:
+                if char != '-' and isinstance(char, str):
+                    totalchars += char
+                else:
+                    continue
         return totalchars
 
 
-zigzag().zoog(string, numlevels)
+print(zigzag().zoog(string, numlevels))
