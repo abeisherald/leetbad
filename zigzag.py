@@ -1,5 +1,5 @@
-string = 'paypalishungry'
-numlevels = 3
+string = 'paypalishiring'
+numlevels = 4
 
 
 class zigzag():
@@ -9,12 +9,13 @@ class zigzag():
     matrix = {}
     counter = 0
     travelator = 0
+    levelstart = 0
 
     def zig(self, string, numlevels):
         if not zigzag.matrix:
             for level in range(numlevels):
                 zigzag.matrix[level] = ['-' for i in range(len(string))]
-        for level in range(numlevels):
+        for level in range(zigzag.levelstart, numlevels):
             if (zigzag.counter < len(string)):
                 line = zigzag.matrix[level]
                 line[zigzag.travelator] = string[zigzag.counter]
@@ -35,7 +36,7 @@ class zigzag():
                 zigzag.counter += 1
             else:
                 return f'Done zag, {zigzag.matrix}'
-        zigzag.travelator += 1
+        zigzag.levelstart = 1
         # print(zigzag.matrix)
         self.zig(string, numlevels)
         
@@ -50,6 +51,7 @@ class zigzag():
                     totalchars += char
                 else:
                     continue
+        print(zigzag.matrix)
         return totalchars
 
 
