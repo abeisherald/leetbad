@@ -1,10 +1,8 @@
-string = 'paypalishiring'
-numlevels = 4
+heck = 'paypalishiringnottoday'
+gogo = 5
 
 
-class zigzag():
-    def __init__(self):
-        pass
+class zigzag:
 
     matrix = {}
     counter = 0
@@ -12,13 +10,23 @@ class zigzag():
 
     def zig(self, string, numlevels):
         for level in range(numlevels):
+<<<<<<< HEAD
             line = zigzag.matrix[level]
             line[zigzag.travelator] = string[zigzag.counter]
             zigzag.counter += 1
+=======
+            if zigzag.counter < len(string):
+                line = zigzag.matrix[level]
+                line[zigzag.travelator] = string[zigzag.counter]
+                zigzag.counter += 1
+
+        
+>>>>>>> 751eecf723e7036095aaccb3a22c14de91d385e4
 
     def zag(self, string, numlevels):
         levelcorrection = 2
         for level in range(numlevels - levelcorrection, 0, -1):
+<<<<<<< HEAD
             line = zigzag.matrix[level]
             zigzag.travelator += 1
             line[zigzag.travelator] = string[zigzag.counter]
@@ -33,13 +41,31 @@ class zigzag():
             self.zag(string, numlevels)
         listoflines = list(zigzag.matrix.values())
         for line in listoflines:
+=======
+            if zigzag.counter < len(string):
+                line = zigzag.matrix[level]
+                zigzag.travelator += 1
+                line[zigzag.travelator] = string[zigzag.counter]
+                zigzag.counter += 1
+        zigzag.travelator += 1
+
+        
+
+    def zoog(self, string, numlevels):
+        totalchars = ''
+        for level in range(numlevels): 
+            zigzag.matrix[level] = ['-'] * (len(string) // 2)
+        while zigzag.counter < len(string):
+            self.zig(string, numlevels)
+            self.zag(string, numlevels)
+        for line in list(zigzag.matrix.values()):
+>>>>>>> 751eecf723e7036095aaccb3a22c14de91d385e4
             for char in line:
-                if char != '-' and isinstance(char, str):
+                if char != '-':
                     totalchars += char
-                else:
-                    continue
-        print(zigzag.matrix)
+        for line in list(zigzag.matrix.values()):
+            print(line)
         return totalchars
 
 
-print(zigzag().zoog(string, numlevels))
+print(zigzag().zoog(heck, gogo))
